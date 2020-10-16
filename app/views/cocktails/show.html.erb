@@ -1,15 +1,19 @@
-<h2><%= @cocktail.name %></h2>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(@cocktail.photo.key, :crop => :fill) %> ')">
+  <div class="container">
+    <h1 class = "banner-text"><strong><%= @cocktail.name %></strong></h1>
 
-<ul class="list-group">
-<% @cocktail.doses.each do |dose| %>
-    <p class="card-text"><%= dose.description%> </p>
-    <p class="card-text"><%= dose.ingredient.name%> </p>
-    <%= link_to 'Destroy', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </li>
-<% end %>
-</ul>
+  </div>
+</div>
 
-<%= link_to 'Back', cocktails_path %> |
-<%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
 
+<div class="container mt-10 mb-10 w-50 p-3">
+  <ul class="list-group">
+    <% @cocktail.doses.each do |dose| %>
+      <li class="list-group-item">C<%= dose.description%> | <%= dose.ingredient.name%> <%= link_to 'delete ingredient', dose, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-muted" %></li>
+
+    <% end %>
+  </ul>
+  <%= link_to 'Back', cocktails_path, class: "btn btn-primary"%>
+  <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+</div>
 

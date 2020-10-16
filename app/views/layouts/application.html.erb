@@ -13,6 +13,17 @@
   </head>
 
   <body>
+    <div>
+      <nav class="navbar navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <%= link_to 'Home', cocktails_path, class: "text-primary" %>
+        </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <%= link_to 'New Cocktail', new_cocktail_path, class: "text-primary" %>
+        </button>
+      </nav>
+    </div>
     <%= yield %>
+
   </body>
 </html>
