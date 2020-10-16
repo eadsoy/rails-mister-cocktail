@@ -1,5 +1,23 @@
-<% @cocktails.each do |cocktail| %>
-  <%= cocktail.name %>
-<% end %>
 
-<%= link_to 'New Cocktail', new_cocktail_path %>
+
+<div>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'New Cocktail', new_cocktail_path, class: "navbar-brand"  %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <%= link_to 'New Cocktail', new_cocktail_path, class: "text-muted"  %>
+    </button>
+  </nav>
+</div>
+
+<div class="container">
+      <% @cocktails.each do |cocktail| %>
+            <div class="card " style="width: 20rem;">
+              <div class="card-body bg-light">
+                <h5 class="card-title"><strong><%= cocktail.name %></strong></h5>
+                <%= link_to 'Show', cocktail_path(cocktail) %> |
+                <div class="d-flex justify-content-start">
+                </div>
+              </div>
+            </div>
+      <% end %>
+</div>

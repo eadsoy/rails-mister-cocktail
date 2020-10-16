@@ -1,10 +1,9 @@
-
 <h2><%= @cocktail.name %></h2>
 
 <ul class="list-group">
 <% @cocktail.doses.each do |dose| %>
-  <li class="list-group-item">
-    <%= dose.description %> |
+    <p class="card-text"><%= dose.description%> </p>
+    <p class="card-text"><%= dose.ingredient.name%> </p>
     <%= link_to 'Destroy', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
   </li>
 <% end %>
