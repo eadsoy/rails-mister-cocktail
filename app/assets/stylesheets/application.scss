@@ -11,11 +11,21 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
+@import "components/ratingstars";
+@import "components/navbar";
 
 body {
-  background: lightgray;
+  background-color: lightgrey;
 }
+
+.navbar-header {
+  color: red;
+}
+
+.rating-form {
+  background-color: white;
+}
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -30,4 +40,21 @@ body {
   opacity: 1;
 }
 
+.doses {
+  margin-bottom: 25px;
+}
 
+.fa-star {
+  color: #FCD939;
+}
+
+.doses {
+  background-color: white;
+}
+
+
+.container-rating {
+  background-color: white;
+  width: 700px;
+  padding: 40px;
+}
