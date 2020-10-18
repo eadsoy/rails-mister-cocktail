@@ -46,12 +46,12 @@ mojito = Cocktail.create!(
 
 
 aperol.photo.attach(
-  io: open('../assets/images/aperolspritz.jpg'),
+  io: open('app/assets/images/aperolspritz.jpg'),
   filename: 'aperol.jpg'
 )
 
 mojito.photo.attach(
-  io: open('../assets/images/mojito.jpg'),
+  io: open('app/assets/images/mojito.jpg'),
   filename: 'mojito.jpg'
 )
 
