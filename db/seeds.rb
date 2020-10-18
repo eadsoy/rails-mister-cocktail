@@ -8,7 +8,7 @@
 require 'open-uri'
 require 'json'
 
-if Rails.env.development?
+
   puts 'Cleaning doses...'
   Dose.destroy_all
   puts 'Cleaning cocktails...'
@@ -17,7 +17,7 @@ if Rails.env.development?
   Ingredient.destroy_all
   puts 'Cleaning reviews...'
   Review.destroy_all
-end
+
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 dict = open(url).read
@@ -36,9 +36,7 @@ end
   name: 'Aperol Spritz'
 )
 
-@mojito = Cocktail.create!(
-  name: 'Mojito'
-)
+
 
 @pina_colada = Cocktail.create!(
   name: 'Pina Colada'
@@ -87,10 +85,7 @@ end
   filename: 'aperol.jpg'
 )
 
-@mojito.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867543/nl2qzoz92g9fmp27r9xxttfsa1r9.jpg'),
-  filename: 'mojito.jpg'
-)
+
 
 @pina_colada.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867586/3x6pqfsbsnnh6r5egqw081zu31pi.jpg'),
@@ -173,51 +168,6 @@ Dose.create!(
   ingredient: Ingredient.new(name: "orange wheel")
 )
 
-# Mojito
-# 10 leaf (blank)s fresh mint leaves
-# ½ lime, cut into 4 wedges
-# 2 tablespoons white sugar, or to taste
-# 1 cup ice cubes
-# 1 ½ fluid ounces white rum
-# ½ cup club soda
-
-puts "adding ingredients to mojito"
-
-Dose.create!(
-  description: '10 leaf (blank)s',
-  cocktail: @mojito,
-  ingredient: Ingredient.new(name: "fresh mint leaves")
-)
-
-Dose.create!(
-  description: '1/2 ',
-  cocktail: @mojito,
-  ingredient: Ingredient.new(name: "lime, cut into 4 wedges")
-  )
-
-Dose.create!(
-  description: '2 tablespoons',
-  cocktail: @mojito,
-  ingredient: Ingredient.new(name: "white sugar")
-)
-
-Dose.create!(
-  description: '1 cup ',
-  cocktail: @mojito,
-  ingredient: Ingredient.new(name: "ice cubes")
-)
-
-Dose.create!(
-  description: '1/2 fluid ounces ',
-  cocktail: @mojito,
-  ingredient: Ingredient.new(name: "white rum")
-)
-
-Dose.create!(
-  description: '1/2 cup ',
-  cocktail: @mojito,
-  ingredient: Ingredient.new(name: "club soda")
-)
 
 # Pina Colada
 # 1 1/2 cup ice
