@@ -81,7 +81,7 @@ end
 # ------photos-------
 
 @aperol.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602879347/pjzhhs1mounjrtitii1j3y5hko8c.jpg'),
+  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1603015242/ludai8xuqyzl3etbzpw5gmq2iyna.jpg'),
   filename: 'aperol.jpg'
 )
 
