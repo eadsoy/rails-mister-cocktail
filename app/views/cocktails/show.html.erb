@@ -34,18 +34,24 @@
         <% end %>
       </div>
   <ul class="list-group">
-    <% @cocktail.reviews.each do |review| %>
-      <div class="review mb-5 mt-3">
-        <li class="list-group-item">
-          <% review.stars.times do  %>
-            <span class="fas fa-star"></span>
-          <% end %>
-          <% (5 - review.stars).times do  %>
-            <span class="far fa-star"></span>
-          <% end %>
-          <p><%= review.text%></p>
-        </li>
-      </div>
+    <% if @cocktail.reviews.nil? %>
+     <% 5.times do  %>
+        <span class="far fa-star"></span>
+     <% end %>
+    <% else %>
+      <% @cocktail.reviews.each do |review| %>
+        <div class="review mb-5 mt-3">
+          <li class="list-group-item">
+            <% review.stars.times do  %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% (5 - review.stars).times do  %>
+              <span class="far fa-star"></span>
+            <% end %>
+            <p><%= review.text%></p>
+          </li>
+        </div>
+      <% end %>
     <% end %>
   </ul>
 
