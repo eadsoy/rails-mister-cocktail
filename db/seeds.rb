@@ -15,8 +15,6 @@ if Rails.env.development?
   Cocktail.destroy_all
   puts 'Cleaning ingredients...'
   Ingredient.destroy_all
-  puts 'Cleaning reviews...'
-  Review.destroy_all
 end
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
@@ -32,113 +30,112 @@ ingredients.each do |name|
 end
 
 # ------cocktails-------
-aperol = Cocktail.create!(
+@aperol = Cocktail.create!(
   name: 'Aperol Spritz'
 )
 
-mojito = Cocktail.create!(
+@mojito = Cocktail.create!(
   name: 'Mojito'
 )
 
-pina_colada = Cocktail.create!(
+@pina_colada = Cocktail.create!(
   name: 'Pina Colada'
 )
 
-brandy_alexander = Cocktail.create!(
+@brandy_alexander = Cocktail.create!(
   name: 'Brandy Alexander'
 )
 
-cosmopolitan = Cocktail.create!(
+@cosmopolitan = Cocktail.create!(
   name: 'Cosmopolitan'
 )
 
-aviation = Cocktail.create!(
+@aviation = Cocktail.create!(
   name: 'Aviation'
 )
 
-darknstormy = Cocktail.create!(
+@darknstormy = Cocktail.create!(
   name: "Dark'n Stormy"
 )
 
-vodka_martini = Cocktail.create!(
+@vodka_martini = Cocktail.create!(
   name: 'Vodka Martini'
 )
 
-french75 = Cocktail.create!(
+@french75 = Cocktail.create!(
   name: 'French 75'
 )
 
-manhattan = Cocktail.create!(
+@manhattan = Cocktail.create!(
   name: 'Manhattan'
 )
 
-bloodandsand = Cocktail.create!(
+@bloodandsand = Cocktail.create!(
   name: 'Blood and Sand'
 )
 
-ramos_gin_fizz = Cocktail.create!(
+@ramos_gin_fizz = Cocktail.create!(
   name: 'Ramos Gin Fizz'
 )
 
 # ------photos-------
 
-
-aperol.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1603015242/ludai8xuqyzl3etbzpw5gmq2iyna.jpg'),
+@aperol.photo.attach(
+  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602879347/pjzhhs1mounjrtitii1j3y5hko8c.jpg'),
   filename: 'aperol.jpg'
 )
 
-mojito.photo.attach(
+@mojito.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867543/nl2qzoz92g9fmp27r9xxttfsa1r9.jpg'),
   filename: 'mojito.jpg'
 )
 
-pina_colada.photo.attach(
+@pina_colada.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867586/3x6pqfsbsnnh6r5egqw081zu31pi.jpg'),
   filename: 'pina_colada.jpg'
 )
 
-brandy_alexander.photo.attach(
+@brandy_alexander.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863269/7alkn8ds1hmzapcrbb5ts1i6p040.jpg'),
   filename: 'brandy_alexander.jpg'
 )
 
-cosmopolitan.photo.attach(
+@cosmopolitan.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863301/b6ac86gzb55irzrwt984efp6k2b5.jpg'),
   filename: 'cosmopolitan.jpg'
 )
 
-aviation.photo.attach(
+@aviation.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602940652/fwiqczc8m4qf1o2849703maccwjt.jpg'),
   filename: 'aviation.jpg'
 )
 
-darknstormy.photo.attach(
+@darknstormy.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863340/zlh5dz90i6oiy7lur5sti5ysutcn.jpg'),
   filename: 'darknstormy.jpg'
 )
 
-vodka_martini.photo.attach(
+@vodka_martini.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602862948/707hwbi9r0zr59qx5cogyl3cna3m.jpg'),
   filename: 'vodka_martini.jpg'
 )
 
-french75.photo.attach(
+@french75.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602868227/fo7u369mx9i50w5erfcgp3xeyzgs.jpg'),
   filename: 'french75.jpg'
 )
 
-manhattan.photo.attach(
+@manhattan.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602942772/ycm6jj71qg8121khr1oeab38bums.jpg'),
   filename: 'manhattan.jpg'
 )
 
-bloodandsand.photo.attach(
+@bloodandsand.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863390/d655iof25br3n2dahqkqohpue3ei.jpg'),
   filename: 'bloodandsand.jpg'
 )
 
-ramos_gin_fizz.photo.attach(
+@ramos_gin_fizz.photo.attach(
   io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863443/eqo3qm4447x13sjw6rsa10n92nak.jpg'),
   filename: 'ramos_gin_fizz.jpg'
 )
@@ -151,26 +148,26 @@ ramos_gin_fizz.photo.attach(
 puts "adding ingredients to aperol spritz"
 
 Dose.create!(
-  description: '3 ounces',
-  cocktail: aperol,
+  description: '3 ounces ',
+  cocktail: @aperol,
   ingredient: Ingredient.new(name: "Prosecco")
 )
 
 Dose.create!(
-  description: '2 ounces',
-  cocktail: aperol,
+  description: '2 ounces ',
+  cocktail: @aperol,
   ingredient: Ingredient.new(name: "Aperol")
   )
 
 Dose.create!(
-  description: '1 ounce',
-  cocktail: aperol,
+  description: '1 ounce ',
+  cocktail: @aperol,
   ingredient: Ingredient.new(name: "soda water")
 )
 
 Dose.create!(
   description: 'Garnish: ',
-  cocktail: aperol,
+  cocktail: @aperol,
   ingredient: Ingredient.new(name: "orange wheel")
 )
 
@@ -185,38 +182,38 @@ Dose.create!(
 puts "adding ingredients to mojito"
 
 Dose.create!(
-  description: '10 leaf (blank)s',
-  cocktail: mojito,
+  description: '10 leaf (blank)s ',
+  cocktail: @mojito,
   ingredient: Ingredient.new(name: "fresh mint leaves")
 )
 
 Dose.create!(
   description: '1/2 ',
-  cocktail: mojito,
+  cocktail: @mojito,
   ingredient: Ingredient.new(name: "lime, cut into 4 wedges")
   )
 
 Dose.create!(
-  description: '2 tablespoons',
-  cocktail: mojito,
+  description: '2 tablespoons ',
+  cocktail: @mojito,
   ingredient: Ingredient.new(name: "white sugar")
 )
 
 Dose.create!(
   description: '1 cup ',
-  cocktail: mojito,
+  cocktail: @mojito,
   ingredient: Ingredient.new(name: "ice cubes")
 )
 
 Dose.create!(
   description: '1/2 fluid ounces ',
-  cocktail: mojito,
+  cocktail: @mojito,
   ingredient: Ingredient.new(name: "white rum")
 )
 
 Dose.create!(
   description: '1/2 cup ',
-  cocktail: mojito,
+  cocktail: @mojito,
   ingredient: Ingredient.new(name: "club soda")
 )
 
@@ -233,43 +230,43 @@ puts "adding ingredients to pina colada"
 
 Dose.create!(
   description: '1 1/2 cup ',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.find_by(name: "ice cubes")
 )
 
 Dose.create!(
   description: '1/2 cup ',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.new(name: "diced pineapple, frozen")
   )
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.new(name: "pineapple juice")
 )
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.new(name: "Coco Lopez coconut cream")
 )
 
 Dose.create!(
   description: '2 1/2 ounces ',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.find_by(name: "white rum")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.new(name: "dark rum")
 )
 
 Dose.create!(
   description: '(optional)',
-  cocktail: pina_colada,
+  cocktail: @pina_colada,
   ingredient: Ingredient.new(name: "Pineapple slices")
 )
 
@@ -283,25 +280,25 @@ puts "adding ingredients to brandy alexander"
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: brandy_alexander,
+  cocktail: @brandy_alexander,
   ingredient: Ingredient.new(name: "brandy")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: brandy_alexander,
+  cocktail: @brandy_alexander,
   ingredient: Ingredient.new(name: "creme de cacao (dark)")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: brandy_alexander,
+  cocktail: @brandy_alexander,
   ingredient: Ingredient.new(name: "cream")
 )
 
 Dose.create!(
   description: 'Garnish: ',
-  cocktail: brandy_alexander,
+  cocktail: @brandy_alexander,
   ingredient: Ingredient.new(name: "Nutmeg (freshly ground)")
 )
 
@@ -316,31 +313,31 @@ puts "adding ingredients to cosmopolitan"
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: cosmopolitan,
+  cocktail: @cosmopolitan,
   ingredient: Ingredient.new(name: "vodka")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: cosmopolitan,
+  cocktail: @cosmopolitan,
   ingredient: Ingredient.new(name: "cranberry juice cocktail")
 )
 
 Dose.create!(
   description: '3/4 ounce ',
-  cocktail: cosmopolitan,
+  cocktail: @cosmopolitan,
   ingredient: Ingredient.new(name: "fresh lime juice")
 )
 
 Dose.create!(
   description: '3/4 ounce ',
-  cocktail: cosmopolitan,
+  cocktail: @cosmopolitan,
   ingredient: Ingredient.new(name: "triple sec.")
 )
 
 Dose.create!(
   description: '(optional) ',
-  cocktail: cosmopolitan,
+  cocktail: @cosmopolitan,
   ingredient: Ingredient.new(name: "Orange twist (for serving)")
 )
 
@@ -355,31 +352,31 @@ puts "adding ingredients to aviation"
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: aviation,
+  cocktail: @aviation,
   ingredient: Ingredient.new(name: "gin")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: aviation,
+  cocktail: @aviation,
   ingredient: Ingredient.new(name: "Maraschino liqueur")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: aviation,
+  cocktail: @aviation,
   ingredient: Ingredient.new(name: "Crème de Violette")
 )
 
 Dose.create!(
   description: '3/4 ounce ',
-  cocktail: aviation,
+  cocktail: @aviation,
   ingredient: Ingredient.new(name: "lemon juice, freshly squeezed")
 )
 
 Dose.create!(
   description: 'Garnish: ',
-  cocktail: aviation,
+  cocktail: @aviation,
   ingredient: Ingredient.new(name: "brandied cherry")
 )
 
@@ -393,25 +390,25 @@ puts "adding ingredients to dark'n stormy"
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: darknstormy,
+  cocktail: @darknstormy,
   ingredient: Ingredient.new(name: "Gosling’s Black Seal rum")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: darknstormy,
+  cocktail: @darknstormy,
   ingredient: Ingredient.new(name: "lime juice, freshly squeezed")
 )
 
 Dose.create!(
   description: '5 ounces ',
-  cocktail: darknstormy,
+  cocktail: @darknstormy,
   ingredient: Ingredient.new(name: "ginger beer")
 )
 
 Dose.create!(
   description: 'Garnish: ',
-  cocktail: darknstormy,
+  cocktail: @darknstormy,
   ingredient: Ingredient.new(name: "lime wedge")
 )
 
@@ -425,25 +422,25 @@ puts "adding ingredients to vodka martini"
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: vodka_martini,
+  cocktail: @vodka_martini,
   ingredient: Ingredient.new(name: "vodka(premium)")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: vodka_martini,
+  cocktail: @vodka_martini,
   ingredient: Ingredient.new(name: "dry vermouth")
 )
 
 Dose.create!(
   description: '2 dashes ',
-  cocktail: vodka_martini,
+  cocktail: @vodka_martini,
   ingredient: Ingredient.new(name: "bitters")
 )
 
 Dose.create!(
   description: 'Garnish: ',
-  cocktail: vodka_martini,
+  cocktail: @vodka_martini,
   ingredient: Ingredient.new(name: "lemon twist or 3 olives")
 )
 
@@ -458,31 +455,31 @@ puts "adding ingredients to french 75"
 
 Dose.create!(
   description: '1 1/2 ounces ',
-  cocktail: french75,
+  cocktail: @french75,
   ingredient: Ingredient.find_by(name: "gin")
 )
 
 Dose.create!(
   description: '3/4 ounce ',
-  cocktail: french75,
+  cocktail: @french75,
   ingredient: Ingredient.new(name: "fresh lemon juice (about ¾ medium lemon)")
 )
 
 Dose.create!(
   description: '3/4 ounce ',
-  cocktail: french75,
+  cocktail: @french75,
   ingredient: Ingredient.new(name: "simple syrup")
 )
 
 Dose.create!(
   description: '3 ounces ',
-  cocktail: french75,
+  cocktail: @french75,
   ingredient: Ingredient.new(name: "chilled Champagne")
 )
 
 Dose.create!(
   description: 'Garnish: ',
-  cocktail: french75,
+  cocktail: @french75,
   ingredient: Ingredient.new(name: "Lemon peel")
 )
 
@@ -496,25 +493,25 @@ puts "adding ingredients to manhattan"
 
 Dose.create!(
   description: '2 dashes ',
-  cocktail: manhattan,
+  cocktail: @manhattan,
   ingredient: Ingredient.new(name: "angostura bitters")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: manhattan,
+  cocktail: @manhattan,
   ingredient: Ingredient.new(name: "sweet vermouth")
 )
 
 Dose.create!(
   description: '2 1/2 ounces ',
-  cocktail: manhattan,
+  cocktail: @manhattan,
   ingredient: Ingredient.new(name: "bourbon")
 )
 
 Dose.create!(
   description: '1 ',
-  cocktail: manhattan,
+  cocktail: @manhattan,
   ingredient: Ingredient.new(name: "maraschino cherry")
 )
 
@@ -530,25 +527,25 @@ puts "adding ingredients to blood and sand"
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: bloodandsand,
+  cocktail: @bloodandsand,
   ingredient: Ingredient.new(name: "blended Scotch")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: bloodandsand,
+  cocktail: @bloodandsand,
   ingredient: Ingredient.find_by(name: "sweet vermouth")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: bloodandsand,
+  cocktail: @bloodandsand,
   ingredient: Ingredient.new(name: "cherry liqueur")
 )
 
 Dose.create!(
   description: '1 ounce ',
-  cocktail: bloodandsand,
+  cocktail: @bloodandsand,
   ingredient: Ingredient.new(name: "fresh orange juice")
 )
 
@@ -566,48 +563,48 @@ puts "adding ingredients to ramos gin fizz"
 
 Dose.create!(
   description: '2 ounces ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.find_by(name: "gin")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.new(name: "heavy cream")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.find_by(name: "lemon juice, freshly squeezed")
 )
 
 Dose.create!(
   description: '1/2 ounce ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.new(name: "fresh lime juice, freshly squeezed")
 )
 
 Dose.create!(
   description: '3/4 ounce ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.find_by(name: "simple syrup")
 )
 
 Dose.create!(
   description: '3 dashes ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.new(name: "orange flower water")
 )
 
 Dose.create!(
   description: '1 fresh ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.new(name: "egg white")
 )
 
 Dose.create!(
   description: 'top with ',
-  cocktail: ramos_gin_fizz,
+  cocktail: @ramos_gin_fizz,
   ingredient: Ingredient.find_by(name: "club soda")
 )
