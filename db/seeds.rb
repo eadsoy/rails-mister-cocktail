@@ -8,14 +8,14 @@
 require 'open-uri'
 require 'json'
 
-if Rails.env.development?
+
   puts 'Cleaning doses...'
   Dose.destroy_all
   puts 'Cleaning cocktails...'
   Cocktail.destroy_all
   puts 'Cleaning ingredients...'
   Ingredient.destroy_all
-end
+
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 dict = open(url).read
