@@ -81,63 +81,75 @@ end
 # ------photos-------
 
 @aperol.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602879347/pjzhhs1mounjrtitii1j3y5hko8c.jpg'),
-  filename: 'aperol.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602879347/pjzhhs1mounjrtitii1j3y5hko8c.jpg'),
+  filename: 'aperol.jpg',
+  content_type: 'image/jpg'
 )
 
 @mojito.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867543/nl2qzoz92g9fmp27r9xxttfsa1r9.jpg'),
-  filename: 'mojito.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867543/nl2qzoz92g9fmp27r9xxttfsa1r9.jpg'),
+  filename: 'mojito.jpg',
+  content_type: 'image/jpg'
 )
 
 @pina_colada.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867586/3x6pqfsbsnnh6r5egqw081zu31pi.jpg'),
-  filename: 'pina_colada.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602867586/3x6pqfsbsnnh6r5egqw081zu31pi.jpg'),
+  filename: 'pina_colada.jpg',
+  content_type: 'image/jpg'
 )
 
 @brandy_alexander.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863269/7alkn8ds1hmzapcrbb5ts1i6p040.jpg'),
-  filename: 'brandy_alexander.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863269/7alkn8ds1hmzapcrbb5ts1i6p040.jpg'),
+  filename: 'brandy_alexander.jpg',
+  content_type: 'image/jpg'
 )
 
 @cosmopolitan.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863301/b6ac86gzb55irzrwt984efp6k2b5.jpg'),
-  filename: 'cosmopolitan.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863301/b6ac86gzb55irzrwt984efp6k2b5.jpg'),
+  filename: 'cosmopolitan.jpg',
+  content_type: 'image/jpg'
 )
 
 @aviation.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602940652/fwiqczc8m4qf1o2849703maccwjt.jpg'),
-  filename: 'aviation.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602940652/fwiqczc8m4qf1o2849703maccwjt.jpg'),
+  filename: 'aviation.jpg',
+  content_type: 'image/jpg'
 )
 
 @darknstormy.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863340/zlh5dz90i6oiy7lur5sti5ysutcn.jpg'),
-  filename: 'darknstormy.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863340/zlh5dz90i6oiy7lur5sti5ysutcn.jpg'),
+  filename: 'darknstormy.jpg',
+  content_type: 'image/jpg'
 )
 
 @vodka_martini.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602862948/707hwbi9r0zr59qx5cogyl3cna3m.jpg'),
-  filename: 'vodka_martini.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602862948/707hwbi9r0zr59qx5cogyl3cna3m.jpg'),
+  filename: 'vodka_martini.jpg',
+  content_type: 'image/jpg'
 )
 
 @french75.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602868227/fo7u369mx9i50w5erfcgp3xeyzgs.jpg'),
-  filename: 'french75.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602868227/fo7u369mx9i50w5erfcgp3xeyzgs.jpg'),
+  filename: 'french75.jpg',
+  content_type: 'image/jpg'
 )
 
 @manhattan.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602942772/ycm6jj71qg8121khr1oeab38bums.jpg'),
-  filename: 'manhattan.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602942772/ycm6jj71qg8121khr1oeab38bums.jpg'),
+  filename: 'manhattan.jpg',
+  content_type: 'image/jpg'
 )
 
 @bloodandsand.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863390/d655iof25br3n2dahqkqohpue3ei.jpg'),
-  filename: 'bloodandsand.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863390/d655iof25br3n2dahqkqohpue3ei.jpg'),
+  filename: 'bloodandsand.jpg',
+  content_type: 'image/jpg'
 )
 
 @ramos_gin_fizz.photo.attach(
-  io: open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863443/eqo3qm4447x13sjw6rsa10n92nak.jpg'),
-  filename: 'ramos_gin_fizz.jpg'
+  io: URI.open('https://res.cloudinary.com/dmcqo9t9u/image/upload/v1602863443/eqo3qm4447x13sjw6rsa10n92nak.jpg'),
+  filename: 'ramos_gin_fizz.jpg',
+  content_type: 'image/jpg'
 )
 # ---------doses--------
 # Aperol Spritz
